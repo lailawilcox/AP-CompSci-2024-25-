@@ -54,7 +54,11 @@ public class ProblemSet1B {
     System.out.println("*** Sum of Digits ***");
     System.out.print("Enter a postive, three-digit number: ");
     int Digits = input.nextInt();
-    
-    System.out.println("The sum of the digits of "+Digits+"is ");
+    int Digit3 = Digits%10;
+    int Digit4 = Digits/10;
+    int Digit1 = Digit4/10;
+    int Digit5 = Digits%100;
+    int Digit2 = Digit5/10;
+    System.out.println("The sum of the digits of "+Digits+" is " + (Digit1+Digit2+Digit3));
     }
 }
