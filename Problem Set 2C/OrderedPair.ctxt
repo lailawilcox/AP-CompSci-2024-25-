@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=OrderedPair
+comment0.text=\r\n\ AP\ Computer\ Science\r\n\ Laila\ Wilcox\r\n\ September\ 9th,\ 2024\r\n\ Promblem\ Set\ 2C\ (OrderedPair)\r\n
+comment1.params=a\ b
+comment1.target=java.lang.String\ toString(double,\ double)
+comment2.params=
+comment2.target=double\ getX()
+comment3.params=
+comment3.target=double\ getY()
+numComments=4
