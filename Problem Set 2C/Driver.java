@@ -12,30 +12,80 @@ class Driver {
         Scanner input = new Scanner(System.in);
         
         //Quadratic Formula
-        System.out.println("Machine to solve for x intercepts of a quadriatic equation of the format ax^2 + bx + c");
-        System.out.println("--------------------------------------------------------------------------------------");
+        System.out.println("QUADRATIC FORMULA: Find the roots of ax^2 + bx + c. Enter a, b and c");
         
-        System.out.print("Insert value of a: ");
-        double a = input.nextDouble();
-        System.out.print("Insert value of b: ");
+        System.out.print("a: ");
+        double a1 = input.nextDouble();
+        System.out.print("b: ");
         double b = input.nextDouble();
-        System.out.print("Insert value of c: ");
+        System.out.print("c: ");
         double c = input.nextDouble();
         
-        System.out.println("The values of x for the equation " +a+ "x^2 + " +b+ "x + " +c+ " are: " + Formula.Quadratic(a, b, c));
+        System.out.println("The solutions for " +a1+ "x^2 + " +b+ "x + " +c+ " are (" + Formula.Quadratic(a1, b, c) + ")");
+        System.out.println("");
         
         //Slope Formula
-        System.out.println("Machine to find the slope of a line with two points");
-        System.out.println("---------------------------------------------------");
-        System.out.print("Insert value of x1: ");
-        double x1 = input.nextDouble();
-        System.out.print("Insert value of y1: ");
-        double y1 = input.nextDouble();
-        System.out.print("Insert value of x2: ");
-        double x2 = input.nextDouble();
-        System.out.print("Insert value of y2: ");
-        double y2 = input.nextDouble();
+        System.out.println("SLOPE FORMULA: Find the slope between points (x1,y1) and (x2,y2)");
+
+        System.out.print("x1: ");
+        double Sx1 = input.nextDouble();
+        System.out.print("y1: ");
+        double Sy1 = input.nextDouble();
+        System.out.print("x2: ");
+        double Sx2 = input.nextDouble();
+        System.out.print("y2: ");
+        double Sy2 = input.nextDouble();
         
-        System.out.print("The slope of the line with the points (" +x1+ ", " +y1+  ") and (" +x2+ ", " +y2+  ") is " + Formula.Slope(x1, y1, x2, y2));
+        System.out.println("A line between "+OrderedPair.findSlope(Sx1, Sy1, Sx2, Sy2)+" has a slope of " + Formula.Slope(Sx1, Sy1, Sx2, Sy2));
+        System.out.println("");
+        
+        //Midpoint Formula
+        System.out.println("MIDPOINT FORMULA: Find the midpoint between (x1,y1) and (x2,y2)");
+
+        System.out.print("x1: ");
+        double Mx1 = input.nextDouble();
+        System.out.print("y1: ");
+        double My1 = input.nextDouble();
+        System.out.print("x2: ");
+        double Mx2 = input.nextDouble();
+        System.out.print("y2: ");
+        double My2 = input.nextDouble();
+        
+        System.out.println("The midpoint between " +OrderedPair.findMidpoint(Mx1, My1, Mx2, My2)+ " is "+Formula.Midpoint(Mx1, My1, Mx2, My2));
+        System.out.println("");
+        
+        //Sum of an Arithmetic Series
+        System.out.println("SUM OF AN ARITHMETIC SERIES");
+
+        System.out.print("Number of terms: ");
+        int k = input.nextInt();
+        System.out.print("Starts with: ");
+        double a = input.nextDouble();
+        System.out.print("Increase by: ");
+        double d = input.nextDouble();
+        
+        System.out.println("The sum of the first 5 terms of an arithmetic series that starts with "+a+ " and increases by " +d+ " is " + Formula.findArithmeticSeriesSum(a,d,k));
+        System.out.println(" ");
+        
+        //Sum of an Geometric Series
+        System.out.println("SUM OF AN GEOMETRIC SERIES");
+
+        System.out.print("Number of terms: ");
+        int Gk = input.nextInt();
+        System.out.print("Starts with: ");
+        double Ga = input.nextDouble();
+        System.out.print("Increase by: ");
+        double r = input.nextDouble();
+        
+        System.out.println("The sum of the first " +Gk+ " terms of a finite geometric series that starts with "+Ga+" and increases by a rate of " +r+ " is " + Formula.findGeometricSeriesSum(Ga,r,Gk));
+        System.out.println(" ");
+        
+        //Die Roller
+        System.out.println("DIE ROLLER");
+
+        System.out.print("How many sides does your die have?");
+        int sides = input.nextInt();
+        
+        System.out.println("Rolling a " +sides+ " die...  you got " +Formula.rollDie(sides));
     }
 }

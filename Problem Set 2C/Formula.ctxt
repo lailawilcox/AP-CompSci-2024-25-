@@ -1,8 +1,16 @@
 #BlueJ class context
 comment0.target=Formula
-comment0.text=\r\n\ AP\ Computer\ Science\r\n\ Laila\ Wilcox\r\n\ September\ 9th,\ 2024\r\n\ Promblem\ Set\ 2C\ (Formula)\r\n
-comment1.params=a\ b\ c
+comment0.text=\n\ AP\ Computer\ Science\n\ Laila\ Wilcox\n\ September\ 9th,\ 2024\n\ Promblem\ Set\ 2C\ (Formula)\n
+comment1.params=a1\ b\ c
 comment1.target=java.lang.String\ Quadratic(double,\ double,\ double)
-comment2.params=x1\ y1\ x2\ y2
+comment2.params=Sx1\ Sy1\ Sx2\ Sy2
 comment2.target=double\ Slope(double,\ double,\ double,\ double)
-numComments=3
+comment3.params=Mx1\ My1\ Mx2\ My2
+comment3.target=java.lang.String\ Midpoint(double,\ double,\ double,\ double)
+comment4.params=a\ d\ k
+comment4.target=double\ findArithmeticSeriesSum(double,\ double,\ int)
+comment5.params=Ga\ r\ Gk
+comment5.target=double\ findGeometricSeriesSum(double,\ double,\ int)
+comment6.params=sides
+comment6.target=int\ rollDie(int)
+numComments=7
