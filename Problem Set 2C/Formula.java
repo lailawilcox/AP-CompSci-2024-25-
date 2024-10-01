@@ -13,15 +13,16 @@ class Formula {
         return answer1 + " and " + answer2;
     }
     
-    public static double Slope(double Sx1, double Sy1, double Sx2, double Sy2){
-        double answer = (Sy2-Sy1) / (Sx2-Sx1);
+    public static double Slope(OrderedPair A, OrderedPair B){
+        double answer = (B.y-A.y) / (B.x-A.x);
         return answer;
     }
     
-    public static String Midpoint(double Mx1, double My1, double Mx2, double My2){
-        double answer1 = (Mx1+Mx2)/2.0;
-        double answer2 = (My1+My2)/2.0;
-        return "(" +answer1+ ", " +answer2+ ")";
+    public static OrderedPair Midpoint(OrderedPair A, OrderedPair B){
+        double answer1 = (A.x + B.x)/2.0;
+        double answer2 = (A.y + B.y)/2.0;
+        OrderedPair answer = new OrderedPair(answer1, answer2);
+        return answer;
     }
     
     public static double findArithmeticSeriesSum(double a, double d, int k){

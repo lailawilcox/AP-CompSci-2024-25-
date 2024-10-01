@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=OrderedPair
 comment0.text=\n\ AP\ Computer\ Science\n\ Laila\ Wilcox\n\ September\ 9th,\ 2024\n\ Promblem\ Set\ 2C\ (OrderedPair)\n
-comment1.params=Sx1\ Sy1\ Sx2\ Sy2
-comment1.target=java.lang.String\ findSlope(double,\ double,\ double,\ double)
-comment2.params=Mx1\ My1\ Mx2\ My2
-comment2.target=java.lang.String\ findMidpoint(double,\ double,\ double,\ double)
+comment1.params=X\ Y
+comment1.target=OrderedPair(double,\ double)
+comment2.params=
+comment2.target=java.lang.String\ toString()
 comment3.params=
 comment3.target=double\ getX()
 comment4.params=

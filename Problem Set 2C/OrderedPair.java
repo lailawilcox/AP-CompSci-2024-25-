@@ -6,21 +6,23 @@
  */
 
 class OrderedPair {
-    public static String findSlope(double Sx1, double Sy1, double Sx2, double Sy2){
-        return "(" +Sx1+ ", " +Sy1+ ") and (" +Sx2+ ", " +Sy2+ ")";
+    
+    double x, y;
+    
+    public OrderedPair (double X, double Y) {
+        x = X;
+        y = Y;
     }
     
-    public static String findMidpoint(double Mx1, double My1, double Mx2, double My2){
-        return "(" +Mx1+ ", " +My1+ ") and (" +Mx2+ ", " +My2+ ")";
+    public String toString() {
+        return "(" + x + ", " + y + ")";
     }
     
     public double getX(){
-        double x = 0;
         return x;
     }
     
     public double getY(){
-        double y = 0;
         return y;
     }
 }

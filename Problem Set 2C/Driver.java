@@ -36,7 +36,10 @@ class Driver {
         System.out.print("y2: ");
         double Sy2 = input.nextDouble();
         
-        System.out.println("A line between "+OrderedPair.findSlope(Sx1, Sy1, Sx2, Sy2)+" has a slope of " + Formula.Slope(Sx1, Sy1, Sx2, Sy2));
+        OrderedPair Sp1 = new OrderedPair(Sx1, Sy1);
+        OrderedPair Sp2 = new OrderedPair(Sx2, Sy2);
+        
+        System.out.println("A line between " + Sp1 + " and " + Sp2 + " has a slope of " + Formula.Slope(Sp1, Sp2));
         System.out.println("");
         
         //Midpoint Formula
@@ -51,7 +54,10 @@ class Driver {
         System.out.print("y2: ");
         double My2 = input.nextDouble();
         
-        System.out.println("The midpoint between " +OrderedPair.findMidpoint(Mx1, My1, Mx2, My2)+ " is "+Formula.Midpoint(Mx1, My1, Mx2, My2));
+        OrderedPair Mp1 = new OrderedPair(Mx1, My1);
+        OrderedPair Mp2 = new OrderedPair(Mx2, My2);
+        
+        System.out.println("The midpoint between " + Mp1 + " and " + Mp2 + " is "+ Formula.Midpoint(Mp1, Mp2));
         System.out.println("");
         
         //Sum of an Arithmetic Series
