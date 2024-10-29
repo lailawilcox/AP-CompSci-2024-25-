@@ -10,11 +10,8 @@ import java.util.Scanner;
 class Driver {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int x=0;
-        while(x==0){
         
-        System.out.println(totalSentiment("SimpleReview.txt"));
+        System.out.println(Review.totalSentiment("SimpleReview.txt"));
         
-    }
     }
 }

@@ -59,10 +59,27 @@ public class Review {
     }   
   }
   
+  /** 
+   * returns a double of the combined value of all of the text in fileName 
+   * while loop: finds the value of all the words excluding the last and saves in as ReviewVal
+   * Finds the value of the last word without the punctuation and adds it to the ReviewVal
+   */
   public static double totalSentiment(String fileName){
-    String totalVal = textToString(fileName);
-    while(
-    return ;
+    String Review = textToString(fileName);
+    String Space = " ";
+    double ReviewVal = 0;
+    while(Review.indexOf(Space) >= 0){
+        int spacePlace = Review.indexOf(Space);
+        String word = Review.substring(0, spacePlace);
+        String wordClear = removePunctuation(word);
+        double wordVal = sentimentVal(wordClear);
+        ReviewVal = ReviewVal + wordVal;
+        Review = Review.substring(spacePlace+1);
+    }
+    String lastWordClear = removePunctuation(Review);
+    double lastWordVal = sentimentVal(lastWordClear);
+    ReviewVal = ReviewVal + lastWordVal;
+    return ReviewVal;
     }
    
   /** 
