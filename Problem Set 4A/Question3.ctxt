@@ -2,4 +2,8 @@
 comment0.target=Question3
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-numComments=2
+comment2.params=A\ B
+comment2.target=OrderedPair\ Midpoint(OrderedPair,\ OrderedPair)
+comment3.params=str
+comment3.target=java.lang.String\ starOut(java.lang.String)
+numComments=4
