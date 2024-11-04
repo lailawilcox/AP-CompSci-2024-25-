@@ -101,27 +101,48 @@ public class Review {
     }
 
     /** 
-     * returns a double of the combined value of all of the text in fileName 
-     * while loop: finds the value of all the words excluding the last and saves in as ReviewVal
-     * Finds the value of the last word without the punctuation and adds it to the ReviewVal
+     * 
      */
     public static String fakeReview(String fileName){
-        String Review1 = textToString(fileName);
-        for(int i = 0; i < Review1.length(); i++){
-            if(i == Review1.indexOf("*")){
+        String Review = textToString(fileName);
+        for(int i = 0; i < Review.length(); i++){
+            if(i == Review.indexOf("*")){
+                String beforeAdjective = Review.substring(0, Review.indexOf("*"));
+
+                String startAtAdjective = Review.substring(Review.indexOf("*"));
+                String adjective = startAtAdjective.substring(0, startAtAdjective.indexOf(" "));
+                String justAdjective = adjective.substring(1);
+                justAdjective = removePunctuation(justAdjective);
+                int endOfAdjective = beforeAdjective.length() + adjective.length();
+                double adjectiveVal = sentimentVal(justAdjective);
                 
-                Review1 = Review1.replace("*", randomAdjective());
+
+                String afterAdjective = Review.substring(endOfAdjective);
+                String newAdjective = randomAdjective();
+                
+                if(adjectiveVal >= 0){
+                    newAdjective = randomPositiveAdj();
+                    while(sentimentVal(newAdjective) <= adjectiveVal){
+                        newAdjective = randomPositiveAdj();
+                    }
+                } else {
+                    newAdjective = randomNegativeAdj();
+                    while(sentimentVal(newAdjective) >= adjectiveVal){
+                        newAdjective = randomNegativeAdj();
+                    }
+                }
+                Review = beforeAdjective + newAdjective + afterAdjective;
             }
         }
-        return Review1;
+        return Review;
     }
 
-        /** 
-         * returns a string containing all of the text in fileName (including punctuation), 
-         * with words separated by a single space 
-         */
-        public static String textToString( String fileName )
-        {  
+    /** 
+     * returns a string containing all of the text in fileName (including punctuation), 
+     * with words separated by a single space 
+     */
+    public static String textToString( String fileName )
+    {  
         String temp = "";
         try {
             Scanner input = new Scanner(new File(fileName));
