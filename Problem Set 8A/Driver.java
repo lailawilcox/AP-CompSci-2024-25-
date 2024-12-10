@@ -11,6 +11,8 @@ public class Driver{
     public static void main (String[] args) {    
         Scanner input = new Scanner (System.in);
         boolean playing = true;
+        int row = 0;
+        int col = 0;
 
         while(playing){
             String[][] board = new String[3][3];
@@ -21,18 +23,31 @@ public class Driver{
 
             while(gameFinished == false && count <= 9){
                 System.out.println("");
+
                 System.out.println("Round: " + count);
                 TicTacToe.printBoard(board);
                 System.out.print(player + ", make your move (row,column): ");
 
                 String move = input.nextLine();
-                int row = TicTacToe.findFirstValue(move);
-                int col = TicTacToe.findSecondValue(move);
 
                 //loops until the move is valid, if the move is valid it skips this
-                while(TicTacToe.isValidMove(board, row, col) == false){
-                    System.out.println("Invalid move! Please try again.");
+                while(TicTacToe.isValidInput(move) == false){
+                    System.out.print("Invalid format! Please try again (row,col):");
                     move = input.nextLine();
+                }
+
+                row = TicTacToe.findFirstValue(move);
+                col = TicTacToe.findSecondValue(move);
+
+                //loops until the input is in the right format, if the input is in the right format it skips this 
+                while(TicTacToe.isValidMove(board, row, col) == false){
+                    System.out.print("Invalid move! Please try again:");
+                    move = input.nextLine();
+                    //loops until the move is valid, if the move is valid it skips this
+                    while(TicTacToe.isValidInput(move) == false){
+                        System.out.print("Invalid format! Please try again (row,col):");
+                        move = input.nextLine();
+                    }
                     row = TicTacToe.findFirstValue(move);
                     col = TicTacToe.findSecondValue(move);
                 }

@@ -35,7 +35,16 @@ public class TicTacToe{
         } else {
             return false;
         }
-    }    
+    } 
+
+    //Checks that the move is within the boundaries of the board and not in a spot that is already taken
+    public static boolean isValidInput(String move){
+        if(move.length() == 3 && move.substring(1,2).equals(",")){
+            return true;
+        } else {
+            return false;
+        }
+    }  
 
     //adds an X or O to the right spot on the board
     public static void makeMove(String [][] board, int row, int col, String player){
@@ -70,11 +79,11 @@ public class TicTacToe{
 
     public static boolean checkDiagnoals(String [][] board, String symbol){
         // checks top-left to bottom-right
-        if (board[0][0].equals(symbol) && board[1][1].equals(symbol) && board[2][2].equals(symbol)) {
+        if (board[0][0].equals(symbol) && board[1][1].equals(symbol) && board[2][2].equals(symbol)){
             return true;
         }
         // checks top-right to bottom-left
-        if (board[0][2].equals(symbol) && board[1][1].equals(symbol) && board[2][0].equals(symbol)) {
+        if (board[0][2].equals(symbol) && board[1][1].equals(symbol) && board[2][0].equals(symbol)){
             return true;
         }
         return false;

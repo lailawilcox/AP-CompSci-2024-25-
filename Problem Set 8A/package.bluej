@@ -2,7 +2,7 @@
 dependency1.from=Driver
 dependency1.to=TicTacToe
 dependency1.type=UsesDependency
-editor.fx.0.height=720
+editor.fx.0.height=771
 editor.fx.0.width=980
 editor.fx.0.x=460
 editor.fx.0.y=25
