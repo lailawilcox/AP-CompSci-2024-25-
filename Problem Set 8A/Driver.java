@@ -11,8 +11,6 @@ public class Driver{
     public static void main (String[] args) {    
         Scanner input = new Scanner (System.in);
         boolean playing = true;
-        int row = 0;
-        int col = 0;
 
         while(playing){
             String[][] board = new String[3][3];
@@ -36,8 +34,8 @@ public class Driver{
                     move = input.nextLine();
                 }
 
-                row = TicTacToe.findFirstValue(move);
-                col = TicTacToe.findSecondValue(move);
+                int row = TicTacToe.findFirstValue(move);
+                int col = TicTacToe.findSecondValue(move);
 
                 //loops until the input is in the right format, if the input is in the right format it skips this 
                 while(TicTacToe.isValidMove(board, row, col) == false){

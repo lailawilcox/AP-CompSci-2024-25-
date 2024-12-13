@@ -32,18 +32,16 @@ public class TicTacToe{
     public static boolean isValidMove(String[][] board, int row, int col){
         if(row >= 0 && row <= 2 && col >= 0 && col <= 2 && board[row][col].equals("[ ]")){
             return true;
-        } else {
-            return false;
         }
+        return false;
     } 
 
     //Checks that the move is within the boundaries of the board and not in a spot that is already taken
     public static boolean isValidInput(String move){
         if(move.length() == 3 && move.substring(1,2).equals(",")){
             return true;
-        } else {
-            return false;
-        }
+        } 
+        return false;
     }  
 
     //adds an X or O to the right spot on the board
